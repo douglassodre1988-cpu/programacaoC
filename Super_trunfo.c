@@ -131,7 +131,7 @@ int main()
 
     printf("***Resultado da Batalha***\n");
     printf("Agora veremos quem é o verdadeiro vencedor \n");
-
+    /*
     if (populacao1 > populacao2)
     {
         printf("A População da Carta 1, cujo número de habitantes é %lu é a vencedora!.\n", populacao1);
@@ -241,6 +241,149 @@ int main()
     {
         printf("Empate entre as duas Cartas no quesito Super Poder.\n");
     }
+
+    return 0;
+    }
+    */
+
+    // codigo acima comentado pois foi retirado para a nova implementação da logida do programa dando o poder de decisão ao jogador.
+
+
+
+    // Declarar uma variável para a escolha do jogador
+    int escolha;
+
+    // Exibir o menu de opções
+    printf("\n\n*** HORA DA BATALHA! ***\n");
+    printf("Escolha o atributo para comparar:\n");
+    printf("1 - População\n");
+    printf("2 - Área (km²)\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - PIB per Capita\n");
+    printf("6 - Densidade Populacional (menor valor vence)\n");
+    printf("7 - Super Poder\n");
+    printf("Digite sua escolha (1-7): ");
+
+    // Lendo a escolha do jogador
+    scanf("%d", &escolha);
+
+    printf("\n--- Resultado da Batalha ---\n");
+
+    // Usando o switch para executar a comparação correta na nova implementação
+    switch (escolha)
+    {
+        case 1: // Se o jogador digitou 1
+            printf("Atributo escolhido: População\n");
+            // Agora, colocamos o seu if-else if-else de população aqui dentro
+            if (populacao1 > populacao2) {
+                printf("Vencedor: Carta 1 - %s (%lu habitantes)\n", nomedacidade1, populacao1);
+            } else if (populacao2 > populacao1) {
+                printf("Vencedor: Carta 2 - %s (%lu habitantes)\n", nomedacidade2, populacao2);
+            } else {
+                printf("Resultado: Empate!\n");
+            }
+            break; // Sai do switch
+
+        case 2: // Se o jogador digitou 2
+            printf("Atributo escolhido: Área\n");
+            // Coloque seu if-else if-else de ÁREA aqui
+            if (area1 > area2) {
+                 printf("Vencedor: Carta 1 - %s (%.2f km²)\n", nomedacidade1, area1);
+            } else if (area2 > area1) {
+                 printf("Vencedor: Carta 2 - %s (%.2f km²)\n", nomedacidade2, area2);
+            } else {
+                 printf("Resultado: Empate!\n");
+            }
+            break; // Sai do switch
+
+            case 3: // Se o jogador digitou 3
+            printf("Atributo escolhido: PIB\n");
+            if (pib1 > pib2)
+    {
+        printf("O PIB da Carta 1, cujo valor é R$ %.2f é o vencedor!.\n", pib1);
+    }
+    else if (pib1 < area2)
+    {
+        printf("O PIB da carta 2, cujo valor é R$ %.2f é o vencedor!.\n", pib2);
+    }
+    else
+    {
+        printf("Empate entre as duas Cartas no quesito PIB.\n");
+    }
+    break; // Sai do switch
+        case 4: // Se o jogador digitou 4
+            printf("Atributo escolhido: Pontos Turisticos\n");
+            if (numerodepontoturistico1 > numerodepontoturistico2)
+    {
+        printf("A Quantidade de Ponto turisticos da Carta 1 é %d. Logo ela é a vencedora!.\n", numerodepontoturistico1);
+    }
+    else if (numerodepontoturistico1 < numerodepontoturistico2)
+    {
+        printf("A Quantidade de Ponto turisticos da Carta 2 é %d. Logo ela é a vencedora!.\n", numerodepontoturistico2);
+    }
+    else
+    {
+        printf("Empate entre as duas Cartas na Quantidade de Pontos Turisticos.\n");
+    }
+    break; // Sai do switch
+    case 5: // Se o jogador digitou 5
+            printf("Atributo escolhido: PIB Per Capita\n");
+            if (pibpercapita1 > pibpercapita2)
+    {
+        printf("O PIB PER CAPITA da Carta 1, cujo valor é R$ %.2f é o vencedor!.\n", pibpercapita1);
+    }
+    else if (pibpercapita1 < pibpercapita2)
+    {
+        printf("O PIB PER CAPITA da carta 2, cujo valor é R$ %.2f é o vencedor!.\n", pibpercapita2);
+    }
+    else
+    {
+        printf("Empate entre as duas Cartas no quesito PIB PER CAPITA.\n");
+    }
+break; // Sai do switch
+    case 6: // Se o jogador digitou 6
+            printf("Atributo escolhido: Densidade Populacional\n");
+            if (Densidadepopulacional1 < Densidadepopulacional2)
+    {
+        printf("A Densidade Populacional da Carta 1, cujo valor é %.2f é a vencedora!.\n", Densidadepopulacional1);
+    }
+    else if (Densidadepopulacional1 > Densidadepopulacional2)
+    {
+        printf("A Densidade Populacional da carta 2, cujo valor é %.2f é a vencedora!.\n", Densidadepopulacional2);
+    }
+    else
+    {
+        printf("Empate entre as duas Cartas no quesito Densidade Populacional.\n");
+    }
+    break; // Sai do switch
+    case 7: // Se o jogador digitou 7
+            printf("Atributo escolhido: Super Poder\n");
+            if (superpoder1 > superpoder2)
+    {
+        printf("O super poder da carta 1, cujo valor é %.2f é o vencedor.\n", superpoder1);
+    }
+    else if (superpoder1 < superpoder2)
+    {
+        printf("O super poder da carta 2, cujo valor é %.2f é o vencedor.\n", superpoder2);
+    }
+    else
+    {
+        printf("Empate entre as duas Cartas no quesito Super Poder.\n");
+    }
+break; // Sai do switch
+
+        // ... VOCÊ CONTINUARIA COM OS OUTROS CASES ...
+        // case 3: para o PIB
+        // case 4: para Pontos Turísticos
+        // etc.
+
+        default: // Se o jogador digitou qualquer outra coisa
+            printf("Opção inválida! Por favor, escolha um número entre 1 e 7.\n");
+            break;
+    }
+
+    printf("\nFim de jogo!\n");
 
     return 0;
 }
